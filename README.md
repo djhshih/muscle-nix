@@ -4,13 +4,14 @@ A minimal example to illustrate creating a single private package outside of
 the Nixpkgs tree, as well as creating a docker image for it.
 
 The example program herein is a public-domain multiple sequence aligner used in
-bioinformatics.
+bioinformatics called `muscle`.
 
 
 ## Requirement
 
-- [Nix](https://nixos.org/nix/download.html)
-- [Docker](https://docs.docker.com/engine/installation/)
+- [Nix](https://nixos.org/nix/download.html) >= 1.11.2 (with `nixpkgs` channel >= 16.09)
+- [Docker](https://docs.docker.com/engine/installation/) >= 1.11.2,
+  build b9f10c9
 
 
 ## Instructions
@@ -25,8 +26,8 @@ directory of this package.
 nix-build muscle.nix
 ```
 
-This step is optional. It will only build the package without making it
-available in your path.
+(This step is optional. It will only build the package without making it
+available in your path.)
 
 ### Install package
 
