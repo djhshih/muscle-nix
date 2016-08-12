@@ -9,7 +9,7 @@ stdenv.mkDerivation rec {
     sha256 = "0bj8kj7sdizy3987zx6w7axihk40fk8rn76mpbqqjcnd64i5a367";
   };
 
-	buildInputs = [ glibc.static ];
+  buildInputs = [ glibc.static ];
 
   unpackPhase = ''
     mkdir $name
