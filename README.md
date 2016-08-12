@@ -9,7 +9,7 @@ bioinformatics called `muscle`.
 
 ## Requirement
 
-- [Nix](https://nixos.org/nix/download.html) >= 1.11.2 (with `nixpkgs` channel >= 16.09)
+- [Nix](https://nixos.org/nix/download.html) >= 1.11.2 (with Nixpkgs channel >= 16.09)
 - [Docker](https://docs.docker.com/engine/installation/) >= 1.11.2,
   build b9f10c9
 
@@ -37,10 +37,10 @@ nix-env -f muscle.nix -i muscle
 
 The `muscle` executable program will be built (if it does not already exist), 
 and it will be available in your Nix profile so that
-you can start the program simply by
+you can run the program on the example `input.fasta` file by
 
 ```bash
-muscle
+muscle -in /data/input.fasta -out /data/output.fasta
 ```
 
 ### Dockerize the package
@@ -78,9 +78,9 @@ Before we proceed, let's return to the base directory of this package:
 cd -
 ```
 
-For the program to do anything useful, you would need an input file. Suppose
-a FASTA file is available locally `./data/input.fasta`, then you can run
-`muscle` on this input by mounting the the `./data` directory as `/data` within
+For the program to do anything useful, you would need an input file. Since our
+input file is available locally at `data/input.fasta`, you can run
+`muscle` on this input by mounting the the `data` directory as `/data` within
 the running docker container.
 
 
@@ -89,6 +89,10 @@ docker run -v $(pwd)/data:/data muscle muscle \
 	-in /data/input.fasta \
 	-out /data/output.fasta
 ```
+
+The `.` notation to refer to the current directory is currently not 
+supported by `docker`, so we used `pwd` to get the path to the current directory.
+
 
 ## See also
 
