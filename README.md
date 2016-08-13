@@ -94,6 +94,16 @@ The `.` notation to refer to the current directory is currently not
 supported by `docker`, so we used `pwd` to get the path to the current directory.
 
 
+## Acknowledgement
+
+[Sander van derg Burg's excellent blog post][1] and help made this private
+package demo possible. [Luca Bruno Lethalman's incredible blog post][2] and his
+work on Nix made the dockerization feature possible.
+
+[1]: https://sandervanderburg.blogspot.com/2014/07/managing-private-nix-packages-outside.html?showComment=1471027848017#c8926797889798915411
+
+[2]: http://lethalman.blogspot.com/2016/04/cheap-docker-images-with-nix_15.html
+
 ## See also
 
 [Nix Package Manager Guide](http://nixos.org/nix/manual/)  
